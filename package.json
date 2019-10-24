@@ -1,13 +1,13 @@
 {
   "name": "ember-class-constructor-fix",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Fixes the Ember native/classic class zebra-striping bug",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/pzuraq/ember-class-constructor-fix",
   "license": "MIT",
-  "author": "",
+  "author": "Chris Hewell Garrett",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -21,8 +21,13 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "broccoli-funnel": "^2.0.2",
+    "broccoli-replace": "^0.12.0",
+    "broccoli-source": "^3.0.0",
+    "broccoli-string-replace": "^0.1.2",
     "ember-cli-babel": "^7.11.1",
-    "ember-cli-htmlbars": "^4.0.0"
+    "ember-cli-htmlbars": "^4.0.0",
+    "ember-cli-version-checker": "^3.1.3"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
@@ -42,7 +47,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^4.5.1",
     "ember-resolver": "^5.3.0",
-    "ember-source": "~3.13.0",
+    "ember-source": "~3.12.0",
     "ember-source-channel-url": "^2.0.1",
     "ember-try": "^1.2.1",
     "eslint-plugin-ember": "^7.1.0",
@@ -54,6 +59,7 @@
     "node": "8.* || >= 10.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "after": "ember-source"
   }
 }

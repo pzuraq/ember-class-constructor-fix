@@ -1,11 +1,31 @@
 'use strict';
 
+// const EmberCliBabel = require('ember-cli-babel/index');
+
+// console.log(EmberCliBabel.isPluginRequired);
+
+// EmberCliBabel.isPluginRequired = (pluginName) => {
+//   console.log(pluginName);
+//   return pluginName !== 'transform-classes';
+// }
+
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+
+
+
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
   });
+
+  let emberSource = app.project.addons.find(a => a.name === 'ember-source');
+  let emberCliBabel = emberSource.addons.find(a => a.name === 'ember-cli-babel');
+
+  // Purposefully trigger the bug
+  emberCliBabel.isPluginRequired = (pluginName) => {
+    return pluginName !== 'transform-classes';
+  }
 
   /*
     This build file specifies the options for the dummy test app of this
