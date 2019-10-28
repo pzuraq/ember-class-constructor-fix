@@ -1,6 +1,6 @@
 {
   "name": "ember-class-constructor-fix",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Fixes the Ember native/classic class zebra-striping bug",
   "keywords": [
     "ember-addon"
